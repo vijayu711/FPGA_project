@@ -1,0 +1,63 @@
+{
+  "0": {
+    "basicblocks": 28,
+    "calls": "",
+    "file": "nn.cpp",
+    "fileloc": 13,
+    "instructions": 138,
+    "loads": {
+      "G": 2,
+      "L": 2
+    },
+    "name": "object_detect_nnbw",
+    "stores": {
+      "L": 4
+    },
+    "total_instructions": 1007
+  },
+  "1": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "w1.h",
+    "fileloc": 7,
+    "instructions": 32769,
+    "name": "__cxx_global_var_init",
+    "total_instructions": 1671169
+  },
+  "2": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "b2.h",
+    "fileloc": 7,
+    "instructions": 5,
+    "name": "__cxx_global_var_init.3",
+    "total_instructions": 205
+  },
+  "3": {
+    "basicblocks": 1,
+    "calls": "1 5 4 2",
+    "file": "nn.pp.0.cpp",
+    "fileloc": 0,
+    "instructions": 5,
+    "name": "",
+    "total_instructions": 1679541
+  },
+  "4": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "w2.h",
+    "fileloc": 7,
+    "instructions": 129,
+    "name": "__cxx_global_var_init.2",
+    "total_instructions": 6529
+  },
+  "5": {
+    "basicblocks": 1,
+    "calls": "",
+    "file": "b1.h",
+    "fileloc": 7,
+    "instructions": 33,
+    "name": "__cxx_global_var_init.1",
+    "total_instructions": 1633
+  }
+}

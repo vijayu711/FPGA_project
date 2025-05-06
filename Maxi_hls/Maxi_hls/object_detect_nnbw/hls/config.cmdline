@@ -1,0 +1,3 @@
+relativeroot=E:/Vitis/Maxi_hls
+original_argv=--mode hls --package --config E:\Vitis\Maxi_hls\_maxi.cfg --work_dir object_detect_nnbw 
+

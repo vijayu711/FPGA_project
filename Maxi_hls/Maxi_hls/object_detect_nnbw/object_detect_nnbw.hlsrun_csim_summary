@@ -1,0 +1,161 @@
+<ENTRY>
+{
+ "thisFile": "E:/Vitis\\Maxi_hls\\object_detect_nnbw\\object_detect_nnbw.hlsrun_csim_summary",
+ "connectId": "",
+ "serverToken": "",
+ "timestamp": "0"
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_CmdStep",
+ "dateTimestamp": "05/01/25 18:21:16",
+ "timestampMillis": "1746138076854",
+ "buildStep": {
+  "cmdId": "f63a757f-683d-424d-8e04-be7c085b8d36",
+  "name": "vitis-run",
+  "logFile": "E:/Vitis\\Maxi_hls\\object_detect_nnbw\\logs\\object_detect_nnbw.steps.log",
+  "commandLine": "C:/Xilinx/Vitis/2024.2/bin/unwrapped/win64.o/vitis-run.exe  --mode hls --csim --config E:\\Vitis\\Maxi_hls\\_maxi.cfg --work_dir object_detect_nnbw ",
+  "args": [
+   "--mode",
+   "hls",
+   "--csim",
+   "--config",
+   "E:\\Vitis\\Maxi_hls\\_maxi.cfg",
+   "--work_dir",
+   "object_detect_nnbw"
+  ],
+  "iniFiles": [],
+  "cwd": "E:\\Vitis\\Maxi_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "05/01/25 18:21:16",
+ "timestampMillis": "1746138076854",
+ "status": {
+  "cmdId": "f63a757f-683d-424d-8e04-be7c085b8d36",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_FlowMetaData",
+ "dateTimestamp": "05/01/25 18:21:23",
+ "timestampMillis": "1746138083062",
+ "buildSummary": {
+  "hardwarePlatform": "",
+  "hardwareDsa": "",
+  "platformDirectory": "",
+  "runtime": "",
+  "systemConfig": "",
+  "flow": "BF_RUN",
+  "target": "TT_HLS_C_SIM",
+  "kernels": [
+   {
+    "base": {
+     "type": "KERNEL",
+     "name": "object_detect_nnbw",
+     "file": "",
+     "reports": [],
+     "uuid": ""
+    },
+    "sources": [
+     "E:/Vitis\\nn.cpp",
+     "E:/Vitis\\nn.h",
+     "C:/Users\\vuppalapati2024\\Downloads\\b2.h",
+     "C:/Users\\vuppalapati2024\\Downloads\\w2.h",
+     "C:/Users\\vuppalapati2024\\Downloads\\b1.h",
+     "C:/Users\\vuppalapati2024\\Downloads\\w1.h"
+    ],
+    "psSources": [],
+    "cuNames": [],
+    "type": "HLS",
+    "frequency": 0,
+    "freqUnits": ""
+   }
+  ],
+  "toolVersion": "2024.2"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_SubCmdStep",
+ "dateTimestamp": "05/01/25 18:21:23",
+ "timestampMillis": "1746138083071",
+ "buildStep": {
+  "cmdId": "08b2ca27-b179-4047-a28b-ca537ed3d10c",
+  "name": "",
+  "logFile": "E:/Vitis\\Maxi_hls\\object_detect_nnbw\\hls\\hls.log",
+  "commandLine": "",
+  "args": [],
+  "iniFiles": [],
+  "cwd": "E:\\Vitis\\Maxi_hls"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "05/01/25 18:21:23",
+ "timestampMillis": "1746138083073",
+ "status": {
+  "cmdId": "08b2ca27-b179-4047-a28b-ca537ed3d10c",
+  "state": "CS_RUNNING"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "05/01/25 18:21:24",
+ "timestampMillis": "1746138084135",
+ "status": {
+  "cmdId": "08b2ca27-b179-4047-a28b-ca537ed3d10c",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Status",
+ "dateTimestamp": "05/01/25 18:21:24",
+ "timestampMillis": "1746138084306",
+ "status": {
+  "cmdId": "f63a757f-683d-424d-8e04-be7c085b8d36",
+  "state": "CS_PASSED"
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "05/01/25 18:21:24",
+ "timestampMillis": "1746138084307",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "HTML",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>
+<ENTRY>
+{
+ "type": "ET_Report",
+ "dateTimestamp": "05/01/25 18:21:24",
+ "timestampMillis": "1746138084309",
+ "report": {
+  "path": "",
+  "name": "",
+  "fileType": "BINARY_PROTOBUF",
+  "reportType": "GLOBAL_RULECHECK_GUIDANCE",
+  "cmdId": ""
+ }
+}
+</ENTRY>

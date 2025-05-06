@@ -1,0 +1,18 @@
+{
+  "0": {
+    "basicblocks": 51,
+    "calls": "",
+    "file": "nn.cpp",
+    "fileloc": 13,
+    "instructions": 1599,
+    "loads": {
+      "G": 38,
+      "L": 37
+    },
+    "name": "object_detect_nnbw",
+    "stores": {
+      "L": 37
+    },
+    "total_instructions": 1599
+  }
+}

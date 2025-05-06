@@ -1,0 +1,69 @@
+<xilinx:hls_fe_msgs>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="directive:1:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaContext="directive" ARG_PragmaFunction="object_detect_nnbw" ARG_PragmaIsValid="1" ARG_PragmaOptions="name=object_detect_nnbw" ARG_PragmaType="top" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../nn.cpp:16:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="object_detect_nnbw" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=input depth=1024 offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../nn.cpp:18:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="object_detect_nnbw" ARG_PragmaIsValid="1" ARG_PragmaOptions="m_axi port=output depth=4 offset=slave" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../nn.cpp:20:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="object_detect_nnbw" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=length" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_VERBOSE_DUMP" msg_id="207-5471" msg_severity="WARNING" msg_loc="../nn.cpp:22:9" msg_body="HLS pragma dump">
+        <args ARG_PragmaFunction="object_detect_nnbw" ARG_PragmaIsValid="1" ARG_PragmaOptions="s_axilite port=return" ARG_PragmaType="interface" ClangWarningOption="dump-hls-pragmas"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-291" msg_severity="INFO" msg_loc="../nn.cpp:58:26" msg_body="Loop 'VITIS_LOOP_58_4' is marked as complete unroll implied by the pipeline pragma">
+        <args LoopName="VITIS_LOOP_58_4"/>
+    </msg>
+    <msg msg_groups="PRAGMA_UNROLL" msg_id="214-186" msg_severity="INFO" msg_loc="../nn.cpp:14:0" msg_body="Unrolling loop 'VITIS_LOOP_58_4' (../nn.cpp:58:26) in function 'object_detect_nnbw' completely with a factor of 32">
+        <args Factor="32" LoopLoc="../nn.cpp:58:26" LoopName="VITIS_LOOP_58_4"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-449" msg_severity="INFO" msg_loc="../w2.h:7:0" msg_body="Automatically partitioning array 'w2' dimension 2 completely based on constant index.">
+        <args Dim="2" Value="w2"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-421" msg_severity="INFO" msg_loc="../b2.h:7:0" msg_body="Automatically partitioning small array 'b2' completely based on array size.">
+        <args Value="b2"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-421" msg_severity="INFO" msg_loc="../nn.cpp:26:8" msg_body="Automatically partitioning small array 'local_output' completely based on array size.">
+        <args Value="local_output"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="../b2.h:7:0" msg_body="array_partition dim=1 type=complete  variable=b2 1 object_detect_nnbw ../b2.h:7:0 b2">
+        <args PragmaFunction="object_detect_nnbw" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=b2" PragmaType="array_partition" VarName="b2" varLoc="../b2.h:7:0"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="../b2.h:7:0" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'b2' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="b2" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="../w2.h:7:0" msg_body="array_partition dim=2 type=complete  variable=w2 1 object_detect_nnbw ../w2.h:7:0 w2">
+        <args PragmaFunction="object_detect_nnbw" PragmaIsAuto="1" PragmaOptions="dim=2 type=complete  variable=w2" PragmaType="array_partition" VarName="w2" varLoc="../w2.h:7:0"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="../w2.h:7:0" msg_body="Inferring pragma 'array_partition type=complete dim=2' for array 'w2' due to pipeline pragma">
+        <args Dim="2" Mode="complete" Name="w2" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="../nn.cpp:26:8" msg_body="array_partition dim=1 type=complete  variable=local_output 1 object_detect_nnbw ../nn.cpp:26:8 local_output">
+        <args PragmaFunction="object_detect_nnbw" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=local_output" PragmaType="array_partition" VarName="local_output" varLoc="../nn.cpp:26:8"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="../nn.cpp:26:8" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'local_output' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="local_output" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="AUTOMATION_VERBOSE_PASSED" msg_id="214-335" msg_severity="INFO" msg_loc="../nn.cpp:28:8" msg_body="array_partition dim=1 type=complete  variable=hidden 1 object_detect_nnbw ../nn.cpp:28:8 hidden">
+        <args PragmaFunction="object_detect_nnbw" PragmaIsAuto="1" PragmaOptions="dim=1 type=complete  variable=hidden" PragmaType="array_partition" VarName="hidden" varLoc="../nn.cpp:28:8"/>
+    </msg>
+    <msg msg_groups="AUTOMATION PRAGMA_MISC" msg_id="214-270" msg_severity="INFO" msg_loc="../nn.cpp:28:8" msg_body="Inferring pragma 'array_partition type=complete dim=1' for array 'hidden' due to pipeline pragma">
+        <args Dim="1" Mode="complete" Name="hidden" PragmaType="array_partition"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="../w2.h:7:0" msg_body="Applying array_partition to 'w2': Complete partitioning on dimension 2.">
+        <args Dim="2" Mode="Complete" UOName="w2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="../b2.h:7:0" msg_body="Applying array_partition to 'b2': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="b2"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="../nn.cpp:26:8" msg_body="Applying array_partition to 'local_output': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="local_output"/>
+    </msg>
+    <msg msg_groups="PRAGMA_MISC" msg_id="214-248" msg_severity="INFO" msg_loc="../nn.cpp:28:8" msg_body="Applying array_partition to 'hidden': Complete partitioning on dimension 1.">
+        <args Dim="1" Mode="Complete" UOName="hidden"/>
+    </msg>
+</xilinx:hls_fe_msgs>
+

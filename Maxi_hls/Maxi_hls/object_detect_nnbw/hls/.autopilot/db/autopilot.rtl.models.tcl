@@ -1,0 +1,65 @@
+set SynModuleInfo {
+  {SRCNAME object_detect_nnbw_Pipeline_1 MODELNAME object_detect_nnbw_Pipeline_1 RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_1
+    SUBMODULES {
+      {MODELNAME object_detect_nnbw_flow_control_loop_pipe_sequential_init RTLNAME object_detect_nnbw_flow_control_loop_pipe_sequential_init BINDTYPE interface TYPE internal_upc_flow_control INSTNAME object_detect_nnbw_flow_control_loop_pipe_sequential_init_U}
+    }
+  }
+  {SRCNAME object_detect_nnbw_Pipeline_VITIS_LOOP_38_1_VITIS_LOOP_42_2 MODELNAME object_detect_nnbw_Pipeline_VITIS_LOOP_38_1_VITIS_LOOP_42_2 RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_38_1_VITIS_LOOP_42_2
+    SUBMODULES {
+      {MODELNAME object_detect_nnbw_mac_muladd_16s_16s_26ns_26_4_1 RTLNAME object_detect_nnbw_mac_muladd_16s_16s_26ns_26_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_38_1_VITIS_LOOP_42_2_w1_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_38_1_VITIS_LOOP_42_2_w1_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_38_1_VITIS_LOOP_42_2_b1_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_38_1_VITIS_LOOP_42_2_b1_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME object_detect_nnbw_Pipeline_VITIS_LOOP_54_3 MODELNAME object_detect_nnbw_Pipeline_VITIS_LOOP_54_3 RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3
+    SUBMODULES {
+      {MODELNAME object_detect_nnbw_sparsemux_9_2_16_1_1 RTLNAME object_detect_nnbw_sparsemux_9_2_16_1_1 BINDTYPE op TYPE sparsemux IMPL compactencoding_dontcare}
+      {MODELNAME object_detect_nnbw_mac_muladd_16s_15ns_26ns_26_4_1 RTLNAME object_detect_nnbw_mac_muladd_16s_15ns_26ns_26_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME object_detect_nnbw_mac_muladd_16s_15s_26ns_26_4_1 RTLNAME object_detect_nnbw_mac_muladd_16s_15s_26ns_26_4_1 BINDTYPE op TYPE all IMPL dsp_slice LATENCY 3}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_0_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_0_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_1_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_1_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_2_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_2_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_3_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_3_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_4_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_4_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_5_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_5_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_6_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_6_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_7_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_7_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_8_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_8_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_9_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_9_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_10_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_10_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_11_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_11_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_12_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_12_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_13_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_13_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_14_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_14_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_15_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_15_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_16_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_16_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_17_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_17_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_18_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_18_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_19_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_19_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_20_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_20_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_21_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_21_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_22_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_22_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_23_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_23_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_24_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_24_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_25_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_25_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_26_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_26_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_27_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_27_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_28_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_28_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_29_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_29_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_30_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_30_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_31_ROM_AUTO_1R RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_w2_31_ROM_AUTO_1R BINDTYPE storage TYPE rom IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+    }
+  }
+  {SRCNAME object_detect_nnbw_Pipeline_4 MODELNAME object_detect_nnbw_Pipeline_4 RTLNAME object_detect_nnbw_object_detect_nnbw_Pipeline_4
+    SUBMODULES {
+      {MODELNAME object_detect_nnbw_sparsemux_9_2_16_1_1_x RTLNAME object_detect_nnbw_sparsemux_9_2_16_1_1_x BINDTYPE op TYPE sparsemux IMPL compactencoding_dontcare}
+    }
+  }
+  {SRCNAME object_detect_nnbw MODELNAME object_detect_nnbw RTLNAME object_detect_nnbw IS_TOP 1
+    SUBMODULES {
+      {MODELNAME object_detect_nnbw_local_input_RAM_AUTO_1R1W RTLNAME object_detect_nnbw_local_input_RAM_AUTO_1R1W BINDTYPE storage TYPE ram IMPL auto LATENCY 2 ALLOW_PRAGMA 1}
+      {MODELNAME object_detect_nnbw_gmem_m_axi RTLNAME object_detect_nnbw_gmem_m_axi BINDTYPE interface TYPE adapter IMPL m_axi}
+      {MODELNAME object_detect_nnbw_control_s_axi RTLNAME object_detect_nnbw_control_s_axi BINDTYPE interface TYPE interface_s_axilite}
+    }
+  }
+}

@@ -1,0 +1,76 @@
+---
+MainSourceFile:  'E:/Vitis/Maxi_hls/object_detect_nnbw/hls/.autopilot/db/nn.pp.0.cpp'
+Diagnostics:     
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_676_1:  '
+    FileOffset:      676
+    FilePath:        'C:\Xilinx\Vitis\2024.2\common\technology\autopilot\etc\ap_int_ref.h'
+    Replacements:    
+      - FilePath:        'E:\Vitis\Maxi_hls\object_detect_nnbw\hls\.autopilot\db\nn.pp.0.cpp'
+        Offset:          280095
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_676_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_690_1:  '
+    FileOffset:      690
+    FilePath:        'C:\Xilinx\Vitis\2024.2\common\technology\autopilot\etc\ap_int_ref.h'
+    Replacements:    
+      - FilePath:        'E:\Vitis\Maxi_hls\object_detect_nnbw\hls\.autopilot\db\nn.pp.0.cpp'
+        Offset:          280561
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_690_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_704_1:  '
+    FileOffset:      704
+    FilePath:        'C:\Xilinx\Vitis\2024.2\common\technology\autopilot\etc\ap_int_ref.h'
+    Replacements:    
+      - FilePath:        'E:\Vitis\Maxi_hls\object_detect_nnbw\hls\.autopilot\db\nn.pp.0.cpp'
+        Offset:          281028
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_704_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_1248_1:  '
+    FileOffset:      1248
+    FilePath:        'C:\Xilinx\Vitis\2024.2\common\technology\autopilot\etc\ap_fixed_base.h'
+    Replacements:    
+      - FilePath:        'E:\Vitis\Maxi_hls\object_detect_nnbw\hls\.autopilot\db\nn.pp.0.cpp'
+        Offset:          564010
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_1248_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_38_1:  '
+    FileOffset:      38
+    FilePath:        'E:\Vitis\nn.cpp'
+    Replacements:    
+      - FilePath:        'E:\Vitis\Maxi_hls\object_detect_nnbw\hls\.autopilot\db\nn.pp.0.cpp'
+        Offset:          1087822
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_38_1: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_42_2:  '
+    FileOffset:      42
+    FilePath:        'E:\Vitis\nn.cpp'
+    Replacements:    
+      - FilePath:        'E:\Vitis\Maxi_hls\object_detect_nnbw\hls\.autopilot\db\nn.pp.0.cpp'
+        Offset:          1087887
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_42_2: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_54_3:  '
+    FileOffset:      54
+    FilePath:        'E:\Vitis\nn.cpp'
+    Replacements:    
+      - FilePath:        'E:\Vitis\Maxi_hls\object_detect_nnbw\hls\.autopilot\db\nn.pp.0.cpp'
+        Offset:          1088037
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_54_3: '
+  - DiagnosticName:  xilinx-label-all-loops
+    Message:         'Added loop label VITIS_LOOP_58_4:  '
+    FileOffset:      58
+    FilePath:        'E:\Vitis\nn.cpp'
+    Replacements:    
+      - FilePath:        'E:\Vitis\Maxi_hls\object_detect_nnbw\hls\.autopilot\db\nn.pp.0.cpp'
+        Offset:          1088101
+        Length:          0
+        ReplacementText: 'VITIS_LOOP_58_4: '
+...

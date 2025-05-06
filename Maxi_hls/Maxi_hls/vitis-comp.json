@@ -1,0 +1,12 @@
+{
+  "name": "Maxi_hls",
+  "type": "HLS",
+  "configuration": {
+    "componentType": "HLS",
+    "configFiles": [
+      "_maxi.cfg"
+    ],
+    "work_dir": "object_detect_nnbw"
+  },
+  "template": "empty_hls_component"
+}

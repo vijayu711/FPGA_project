@@ -1,0 +1,323 @@
+
+
+================================================================
+== Synthesis Summary Report of 'object_detect_nnbw'
+================================================================
++ General Information: 
+    * Date:           Thu May  1 18:22:56 2025
+    * Version:        2024.2 (Build 5238294 on Nov  8 2024)
+    * Project:        object_detect_nnbw
+    * Solution:       hls (Vivado IP Flow Target)
+    * Product family: zynq
+    * Target device:  xc7z020-clg400-1
+    
+
++ Performance & Resource Estimates: 
+    
+    PS: '+' for module; 'o' for loop; '*' for dataflow
+    +----------------------------------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+----------+----------+-----------+-----------+-----+
+    |                             Modules                            | Issue|      | Latency |  Latency  | Iteration|         |  Trip |          |          |          |           |           |     |
+    |                             & Loops                            | Type | Slack| (cycles)|    (ns)   |  Latency | Interval| Count | Pipelined|   BRAM   |    DSP   |     FF    |    LUT    | URAM|
+    +----------------------------------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+----------+----------+-----------+-----------+-----+
+    |+ object_detect_nnbw                                            |     -|  0.00|        -|          -|         -|        -|      -|        no|  36 (12%)|  33 (15%)|  4958 (4%)|  3319 (6%)|    -|
+    | + object_detect_nnbw_Pipeline_1                                |     -|  0.00|        -|          -|         -|        -|      -|        no|         -|         -|   43 (~0%)|  100 (~0%)|    -|
+    |  o Loop 1                                                      |     -|  7.30|        -|          -|         2|        1|      -|       yes|         -|         -|          -|          -|    -|
+    | + object_detect_nnbw_Pipeline_VITIS_LOOP_38_1_VITIS_LOOP_42_2  |     -|  0.78|    32774|  3.277e+05|         -|    32774|      -|        no|  32 (11%)|   1 (~0%)|  1633 (1%)|  1331 (2%)|    -|
+    |  o VITIS_LOOP_38_1_VITIS_LOOP_42_2                             |     -|  7.30|    32772|  3.277e+05|         6|        1|  32768|       yes|         -|         -|          -|          -|    -|
+    | + object_detect_nnbw_Pipeline_VITIS_LOOP_54_3                  |     -|  2.47|       40|    400.000|         -|       40|      -|        no|         -|  32 (14%)|  1882 (1%)|  274 (~0%)|    -|
+    |  o VITIS_LOOP_54_3                                             |     -|  7.30|       38|    380.000|        36|        1|      4|       yes|         -|         -|          -|          -|    -|
+    | + object_detect_nnbw_Pipeline_4                                |     -|  0.00|        6|     60.000|         -|        6|      -|        no|         -|         -|   22 (~0%)|   93 (~0%)|    -|
+    |  o Loop 1                                                      |     -|  7.30|        4|     40.000|         2|        1|      4|       yes|         -|         -|          -|          -|    -|
+    +----------------------------------------------------------------+------+------+---------+-----------+----------+---------+-------+----------+----------+----------+-----------+-----------+-----+
+
+
+================================================================
+== HW Interfaces
+================================================================
+* M_AXI
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| Interface  | Read/Write | Data Width | Address Width | Latency | Offset | Register | Max Widen | Max Read     | Max Write    | Num Read    | Num Write   | Resource Estimate |
+|            |            | (SW->HW)   |               |         |        |          | Bitwidth  | Burst Length | Burst Length | Outstanding | Outstanding |                   |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+| m_axi_gmem | READ_WRITE | 16 -> 16   | 64            | 0       | slave  | 0        | 0         | 16           | 16           | 16          | 16          | BRAM=3            |
++------------+------------+------------+---------------+---------+--------+----------+-----------+--------------+--------------+-------------+-------------+-------------------+
+
+* S_AXILITE Interfaces
++---------------+------------+---------------+--------+----------+
+| Interface     | Data Width | Address Width | Offset | Register |
++---------------+------------+---------------+--------+----------+
+| s_axi_control | 32         | 6             | 16     | 0        |
++---------------+------------+---------------+--------+----------+
+
+* S_AXILITE Registers
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| Interface     | Register   | Offset | Width | Access | Description                      | Bit Fields                                                           |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+| s_axi_control | CTRL       | 0x00   | 32    | RW     | Control signals                  | 0=AP_START 1=AP_DONE 2=AP_IDLE 3=AP_READY 7=AUTO_RESTART 9=INTERRUPT |
+| s_axi_control | GIER       | 0x04   | 32    | RW     | Global Interrupt Enable Register | 0=Enable                                                             |
+| s_axi_control | IP_IER     | 0x08   | 32    | RW     | IP Interrupt Enable Register     | 0=CHAN0_INT_EN 1=CHAN1_INT_EN                                        |
+| s_axi_control | IP_ISR     | 0x0c   | 32    | RW     | IP Interrupt Status Register     | 0=CHAN0_INT_ST 1=CHAN1_INT_ST                                        |
+| s_axi_control | input_r_1  | 0x10   | 32    | W      | Data signal of input_r           |                                                                      |
+| s_axi_control | input_r_2  | 0x14   | 32    | W      | Data signal of input_r           |                                                                      |
+| s_axi_control | output_r_1 | 0x1c   | 32    | W      | Data signal of output_r          |                                                                      |
+| s_axi_control | output_r_2 | 0x20   | 32    | W      | Data signal of output_r          |                                                                      |
+| s_axi_control | length_r   | 0x28   | 32    | W      | Data signal of length_r          |                                                                      |
++---------------+------------+--------+-------+--------+----------------------------------+----------------------------------------------------------------------+
+
+* TOP LEVEL CONTROL
++-----------+------------+-----------+
+| Interface | Type       | Ports     |
++-----------+------------+-----------+
+| ap_clk    | clock      | ap_clk    |
+| ap_rst_n  | reset      | ap_rst_n  |
+| interrupt | interrupt  | interrupt |
+| ap_ctrl   | ap_ctrl_hs |           |
++-----------+------------+-----------+
+
+
+================================================================
+== SW I/O Information
+================================================================
+* Top Function Arguments
++----------+-----------+--------------------------------------+
+| Argument | Direction | Datatype                             |
++----------+-----------+--------------------------------------+
+| input    | inout     | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0>* |
+| output   | inout     | ap_fixed<16, 6, AP_TRN, AP_WRAP, 0>* |
+| length   | in        | int                                  |
++----------+-----------+--------------------------------------+
+
+* SW-to-HW Mapping
++----------+---------------+-----------+----------+--------------------------------------+
+| Argument | HW Interface  | HW Type   | HW Usage | HW Info                              |
++----------+---------------+-----------+----------+--------------------------------------+
+| input    | m_axi_gmem    | interface |          | channel=0                            |
+| input    | s_axi_control | register  | offset   | name=input_r_1 offset=0x10 range=32  |
+| input    | s_axi_control | register  | offset   | name=input_r_2 offset=0x14 range=32  |
+| output   | m_axi_gmem    | interface |          | channel=0                            |
+| output   | s_axi_control | register  | offset   | name=output_r_1 offset=0x1c range=32 |
+| output   | s_axi_control | register  | offset   | name=output_r_2 offset=0x20 range=32 |
+| length   | s_axi_control | register  |          | name=length_r offset=0x28 range=32   |
++----------+---------------+-----------+----------+--------------------------------------+
+
+
+================================================================
+== M_AXI Burst Information
+================================================================
+ Note: All burst requests might be further partitioned into multiple requests during RTL generation based on max_read_burst_length or max_write_burst_length settings.
+
+* Inferred Burst Summary
++--------------+-----------+----------+-------+-----------+----------------+
+| HW Interface | Direction | Length   | Width | Loop      | Loop Location  |
++--------------+-----------+----------+-------+-----------+----------------+
+| m_axi_gmem   | read      | variable | 16    | anonymous |                |
+| m_axi_gmem   | write     | 4        | 16    | anonymous | ../nn.cpp:70:5 |
++--------------+-----------+----------+-------+-----------+----------------+
+
+* All M_AXI Variable Accesses
++--------------+----------+-----------------+-----------+--------------+--------+-----------+----------------+------------+-------------------------------------------------------------------------------------------------------+
+| HW Interface | Variable | Access Location | Direction | Burst Status | Length | Loop      | Loop Location  | Resolution | Problem                                                                                               |
++--------------+----------+-----------------+-----------+--------------+--------+-----------+----------------+------------+-------------------------------------------------------------------------------------------------------+
+| m_axi_gmem   | output   | ../nn.cpp:70:5  | write     | Widen Fail   |        | anonymous | ../nn.cpp:70:5 | 214-353    | Could not widen since type i16 size is greater than or equal to the max_widen_bitwidth threshold of 0 |
+| m_axi_gmem   | output   | ../nn.cpp:70:5  | write     | Inferred     | 4      | anonymous | ../nn.cpp:70:5 |            |                                                                                                       |
++--------------+----------+-----------------+-----------+--------------+--------+-----------+----------------+------------+-------------------------------------------------------------------------------------------------------+
+
+    * Resolution URL: docs.xilinx.com/access/sources/dita/topic?Doc_Version=2024.2%20English&url=ug1448-hls-guidance&resourceid=XXX-YYY.html (replace XXX-YYY with column value)
+
+================================================================
+== Bind Op Report
+================================================================
++----------------------------------------------------------------+-----+--------+----------------+-----------+--------------------------+---------+
+| Name                                                           | DSP | Pragma | Variable       | Op        | Impl                     | Latency |
++----------------------------------------------------------------+-----+--------+----------------+-----------+--------------------------+---------+
+| + object_detect_nnbw                                           | 33  |        |                |           |                          |         |
+|   icmp_ln34_fu_489_p2                                          |     |        | icmp_ln34      | seteq     | auto                     | 0       |
+|  + object_detect_nnbw_Pipeline_1                               | 0   |        |                |           |                          |         |
+|    empty_fu_103_p2                                             |     |        | empty          | add       | fabric                   | 0       |
+|    exitcond18_fu_113_p2                                        |     |        | exitcond18     | seteq     | auto                     | 0       |
+|  + object_detect_nnbw_Pipeline_VITIS_LOOP_38_1_VITIS_LOOP_42_2 | 1   |        |                |           |                          |         |
+|    icmp_ln38_fu_749_p2                                         |     |        | icmp_ln38      | seteq     | auto                     | 0       |
+|    add_ln38_1_fu_755_p2                                        |     |        | add_ln38_1     | add       | fabric                   | 0       |
+|    add_ln38_fu_767_p2                                          |     |        | add_ln38       | add       | fabric                   | 0       |
+|    icmp_ln42_fu_773_p2                                         |     |        | icmp_ln42      | seteq     | auto                     | 0       |
+|    select_ln38_fu_779_p3                                       |     |        | select_ln38    | select    | auto_sel                 | 0       |
+|    select_ln38_1_fu_1073_p3                                    |     |        | select_ln38_1  | select    | auto_sel                 | 0       |
+|    select_ln38_2_fu_1080_p3                                    |     |        | select_ln38_2  | select    | auto_sel                 | 0       |
+|    select_ln38_3_fu_1087_p3                                    |     |        | select_ln38_3  | select    | auto_sel                 | 0       |
+|    select_ln38_4_fu_1094_p3                                    |     |        | select_ln38_4  | select    | auto_sel                 | 0       |
+|    select_ln38_5_fu_1101_p3                                    |     |        | select_ln38_5  | select    | auto_sel                 | 0       |
+|    select_ln38_6_fu_1108_p3                                    |     |        | select_ln38_6  | select    | auto_sel                 | 0       |
+|    select_ln38_7_fu_1115_p3                                    |     |        | select_ln38_7  | select    | auto_sel                 | 0       |
+|    select_ln38_8_fu_1122_p3                                    |     |        | select_ln38_8  | select    | auto_sel                 | 0       |
+|    select_ln38_9_fu_1129_p3                                    |     |        | select_ln38_9  | select    | auto_sel                 | 0       |
+|    select_ln38_10_fu_1136_p3                                   |     |        | select_ln38_10 | select    | auto_sel                 | 0       |
+|    select_ln38_11_fu_1143_p3                                   |     |        | select_ln38_11 | select    | auto_sel                 | 0       |
+|    select_ln38_12_fu_1150_p3                                   |     |        | select_ln38_12 | select    | auto_sel                 | 0       |
+|    select_ln38_13_fu_1157_p3                                   |     |        | select_ln38_13 | select    | auto_sel                 | 0       |
+|    select_ln38_14_fu_1164_p3                                   |     |        | select_ln38_14 | select    | auto_sel                 | 0       |
+|    select_ln38_15_fu_1171_p3                                   |     |        | select_ln38_15 | select    | auto_sel                 | 0       |
+|    select_ln38_16_fu_1178_p3                                   |     |        | select_ln38_16 | select    | auto_sel                 | 0       |
+|    select_ln38_17_fu_1185_p3                                   |     |        | select_ln38_17 | select    | auto_sel                 | 0       |
+|    select_ln38_18_fu_1192_p3                                   |     |        | select_ln38_18 | select    | auto_sel                 | 0       |
+|    select_ln38_19_fu_1199_p3                                   |     |        | select_ln38_19 | select    | auto_sel                 | 0       |
+|    select_ln38_20_fu_1206_p3                                   |     |        | select_ln38_20 | select    | auto_sel                 | 0       |
+|    select_ln38_21_fu_1213_p3                                   |     |        | select_ln38_21 | select    | auto_sel                 | 0       |
+|    select_ln38_22_fu_1220_p3                                   |     |        | select_ln38_22 | select    | auto_sel                 | 0       |
+|    select_ln38_23_fu_1227_p3                                   |     |        | select_ln38_23 | select    | auto_sel                 | 0       |
+|    select_ln38_24_fu_1234_p3                                   |     |        | select_ln38_24 | select    | auto_sel                 | 0       |
+|    select_ln38_25_fu_1241_p3                                   |     |        | select_ln38_25 | select    | auto_sel                 | 0       |
+|    select_ln38_26_fu_1248_p3                                   |     |        | select_ln38_26 | select    | auto_sel                 | 0       |
+|    select_ln38_27_fu_1255_p3                                   |     |        | select_ln38_27 | select    | auto_sel                 | 0       |
+|    select_ln38_28_fu_1262_p3                                   |     |        | select_ln38_28 | select    | auto_sel                 | 0       |
+|    select_ln38_29_fu_1269_p3                                   |     |        | select_ln38_29 | select    | auto_sel                 | 0       |
+|    select_ln38_30_fu_1276_p3                                   |     |        | select_ln38_30 | select    | auto_sel                 | 0       |
+|    select_ln38_31_fu_1283_p3                                   |     |        | select_ln38_31 | select    | auto_sel                 | 0       |
+|    select_ln38_32_fu_1290_p3                                   |     |        | select_ln38_32 | select    | auto_sel                 | 0       |
+|    select_ln38_33_fu_787_p3                                    |     |        | select_ln38_33 | select    | auto_sel                 | 0       |
+|    first_iter_0_fu_856_p2                                      |     |        | first_iter_0   | seteq     | auto                     | 0       |
+|    add_ln44_1_fu_845_p2                                        |     |        | add_ln44_1     | add       | fabric                   | 0       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U5                           | 1   |        | mul_ln44       | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U5                           | 1   |        | add_ln44       | add       | dsp_slice                | 3       |
+|    add_ln42_fu_804_p2                                          |     |        | add_ln42       | add       | fabric                   | 0       |
+|    icmp_ln42_1_fu_810_p2                                       |     |        | icmp_ln42_1    | seteq     | auto                     | 0       |
+|    icmp_ln48_fu_1315_p2                                        |     |        | icmp_ln48      | setgt     | auto                     | 0       |
+|    hidden_32_fu_1321_p3                                        |     |        | hidden_32      | select    | auto_sel                 | 0       |
+|  + object_detect_nnbw_Pipeline_VITIS_LOOP_54_3                 | 32  |        |                |           |                          |         |
+|    icmp_ln54_fu_988_p2                                         |     |        | icmp_ln54      | seteq     | auto                     | 0       |
+|    add_ln54_fu_994_p2                                          |     |        | add_ln54       | add       | fabric                   | 0       |
+|    sparsemux_9_2_16_1_1_U42                                    |     |        | sum            | sparsemux | compactencoding_dontcare | 0       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U43                          | 1   |        | mul_ln60       | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U43                          | 1   |        | add_ln60       | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U44                          | 1   |        | mul_ln60_1     | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U44                          | 1   |        | add_ln60_1     | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U45                          | 1   |        | mul_ln60_2     | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U45                          | 1   |        | add_ln60_2     | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U46                          | 1   |        | mul_ln60_3     | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U46                          | 1   |        | add_ln60_3     | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U47                          | 1   |        | mul_ln60_4     | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U47                          | 1   |        | add_ln60_4     | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U48                          | 1   |        | mul_ln60_5     | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U48                          | 1   |        | add_ln60_5     | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_15ns_26ns_26_4_1_U49                         | 1   |        | mul_ln60_6     | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_15ns_26ns_26_4_1_U49                         | 1   |        | add_ln60_6     | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U50                          | 1   |        | mul_ln60_7     | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U50                          | 1   |        | add_ln60_7     | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U51                          | 1   |        | mul_ln60_8     | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U51                          | 1   |        | add_ln60_8     | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U52                          | 1   |        | mul_ln60_9     | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U52                          | 1   |        | add_ln60_9     | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_15ns_26ns_26_4_1_U53                         | 1   |        | mul_ln60_10    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_15ns_26ns_26_4_1_U53                         | 1   |        | add_ln60_10    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_15s_26ns_26_4_1_U54                          | 1   |        | mul_ln60_11    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_15s_26ns_26_4_1_U54                          | 1   |        | add_ln60_11    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U55                          | 1   |        | mul_ln60_12    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U55                          | 1   |        | add_ln60_12    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U56                          | 1   |        | mul_ln60_13    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U56                          | 1   |        | add_ln60_13    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U57                          | 1   |        | mul_ln60_14    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U57                          | 1   |        | add_ln60_14    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U58                          | 1   |        | mul_ln60_15    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U58                          | 1   |        | add_ln60_15    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U59                          | 1   |        | mul_ln60_16    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U59                          | 1   |        | add_ln60_16    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U60                          | 1   |        | mul_ln60_17    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U60                          | 1   |        | add_ln60_17    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U61                          | 1   |        | mul_ln60_18    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U61                          | 1   |        | add_ln60_18    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U62                          | 1   |        | mul_ln60_19    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U62                          | 1   |        | add_ln60_19    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U63                          | 1   |        | mul_ln60_20    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U63                          | 1   |        | add_ln60_20    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U64                          | 1   |        | mul_ln60_21    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U64                          | 1   |        | add_ln60_21    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U65                          | 1   |        | mul_ln60_22    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U65                          | 1   |        | add_ln60_22    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_15ns_26ns_26_4_1_U66                         | 1   |        | mul_ln60_23    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_15ns_26ns_26_4_1_U66                         | 1   |        | add_ln60_23    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U67                          | 1   |        | mul_ln60_24    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U67                          | 1   |        | add_ln60_24    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U68                          | 1   |        | mul_ln60_25    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U68                          | 1   |        | add_ln60_25    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U69                          | 1   |        | mul_ln60_26    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U69                          | 1   |        | add_ln60_26    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U70                          | 1   |        | mul_ln60_27    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U70                          | 1   |        | add_ln60_27    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_15s_26ns_26_4_1_U71                          | 1   |        | mul_ln60_28    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_15s_26ns_26_4_1_U71                          | 1   |        | add_ln60_28    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U72                          | 1   |        | mul_ln60_29    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U72                          | 1   |        | add_ln60_29    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U73                          | 1   |        | mul_ln60_30    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U73                          | 1   |        | add_ln60_30    | add       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U74                          | 1   |        | mul_ln60_31    | mul       | dsp_slice                | 3       |
+|    mac_muladd_16s_16s_26ns_26_4_1_U74                          | 1   |        | add_ln60_31    | add       | dsp_slice                | 3       |
+|  + object_detect_nnbw_Pipeline_4                               | 0   |        |                |           |                          |         |
+|    exitcond2_fu_118_p2                                         |     |        | exitcond2      | seteq     | auto                     | 0       |
+|    empty_fu_124_p2                                             |     |        | empty          | add       | fabric                   | 0       |
+|    sparsemux_9_2_16_1_1_x_U146                                 |     |        | tmp            | sparsemux | compactencoding_dontcare | 0       |
++----------------------------------------------------------------+-----+--------+----------------+-----------+--------------------------+---------+
+
+
+================================================================
+== Storage Report
+================================================================
++----------------------------------------------------------------+--------------+-----------+------+------+--------+-------------+------+---------+------------------+
+| Name                                                           | Usage        | Type      | BRAM | URAM | Pragma | Variable    | Impl | Latency | Bitwidth, Depth, |
+|                                                                |              |           |      |      |        |             |      |         | Banks            |
++----------------------------------------------------------------+--------------+-----------+------+------+--------+-------------+------+---------+------------------+
+| + object_detect_nnbw                                           |              |           | 36   | 0    |        |             |      |         |                  |
+|   control_s_axi_U                                              | interface    | s_axilite |      |      |        |             |      |         |                  |
+|   gmem_m_axi_U                                                 | interface    | m_axi     | 3    |      |        |             |      |         |                  |
+|   local_input_U                                                | ram_1p array |           | 1    |      |        | local_input | auto | 1       | 16, 1024, 1      |
+|  + object_detect_nnbw_Pipeline_VITIS_LOOP_38_1_VITIS_LOOP_42_2 |              |           | 32   | 0    |        |             |      |         |                  |
+|    w1_U                                                        | rom_1p       |           | 32   |      |        | w1          | auto | 1       | 16, 32768, 1     |
+|    b1_U                                                        | rom_1p       |           |      |      |        | b1          | auto | 1       | 16, 32, 1        |
+|  + object_detect_nnbw_Pipeline_VITIS_LOOP_54_3                 |              |           | 0    | 0    |        |             |      |         |                  |
+|    w2_0_U                                                      | rom_1p       |           |      |      |        | w2_0        | auto | 1       | 16, 4, 1         |
+|    w2_1_U                                                      | rom_1p       |           |      |      |        | w2_1        | auto | 1       | 16, 4, 1         |
+|    w2_2_U                                                      | rom_1p       |           |      |      |        | w2_2        | auto | 1       | 16, 4, 1         |
+|    w2_3_U                                                      | rom_1p       |           |      |      |        | w2_3        | auto | 1       | 16, 4, 1         |
+|    w2_4_U                                                      | rom_1p       |           |      |      |        | w2_4        | auto | 1       | 16, 4, 1         |
+|    w2_5_U                                                      | rom_1p       |           |      |      |        | w2_5        | auto | 1       | 16, 4, 1         |
+|    w2_6_U                                                      | rom_1p       |           |      |      |        | w2_6        | auto | 1       | 15, 4, 1         |
+|    w2_7_U                                                      | rom_1p       |           |      |      |        | w2_7        | auto | 1       | 16, 4, 1         |
+|    w2_8_U                                                      | rom_1p       |           |      |      |        | w2_8        | auto | 1       | 16, 4, 1         |
+|    w2_9_U                                                      | rom_1p       |           |      |      |        | w2_9        | auto | 1       | 16, 4, 1         |
+|    w2_10_U                                                     | rom_1p       |           |      |      |        | w2_10       | auto | 1       | 15, 4, 1         |
+|    w2_11_U                                                     | rom_1p       |           |      |      |        | w2_11       | auto | 1       | 15, 4, 1         |
+|    w2_12_U                                                     | rom_1p       |           |      |      |        | w2_12       | auto | 1       | 16, 4, 1         |
+|    w2_13_U                                                     | rom_1p       |           |      |      |        | w2_13       | auto | 1       | 16, 4, 1         |
+|    w2_14_U                                                     | rom_1p       |           |      |      |        | w2_14       | auto | 1       | 16, 4, 1         |
+|    w2_15_U                                                     | rom_1p       |           |      |      |        | w2_15       | auto | 1       | 16, 4, 1         |
+|    w2_16_U                                                     | rom_1p       |           |      |      |        | w2_16       | auto | 1       | 16, 4, 1         |
+|    w2_17_U                                                     | rom_1p       |           |      |      |        | w2_17       | auto | 1       | 16, 4, 1         |
+|    w2_18_U                                                     | rom_1p       |           |      |      |        | w2_18       | auto | 1       | 16, 4, 1         |
+|    w2_19_U                                                     | rom_1p       |           |      |      |        | w2_19       | auto | 1       | 16, 4, 1         |
+|    w2_20_U                                                     | rom_1p       |           |      |      |        | w2_20       | auto | 1       | 16, 4, 1         |
+|    w2_21_U                                                     | rom_1p       |           |      |      |        | w2_21       | auto | 1       | 16, 4, 1         |
+|    w2_22_U                                                     | rom_1p       |           |      |      |        | w2_22       | auto | 1       | 16, 4, 1         |
+|    w2_23_U                                                     | rom_1p       |           |      |      |        | w2_23       | auto | 1       | 15, 4, 1         |
+|    w2_24_U                                                     | rom_1p       |           |      |      |        | w2_24       | auto | 1       | 16, 4, 1         |
+|    w2_25_U                                                     | rom_1p       |           |      |      |        | w2_25       | auto | 1       | 16, 4, 1         |
+|    w2_26_U                                                     | rom_1p       |           |      |      |        | w2_26       | auto | 1       | 16, 4, 1         |
+|    w2_27_U                                                     | rom_1p       |           |      |      |        | w2_27       | auto | 1       | 16, 4, 1         |
+|    w2_28_U                                                     | rom_1p       |           |      |      |        | w2_28       | auto | 1       | 15, 4, 1         |
+|    w2_29_U                                                     | rom_1p       |           |      |      |        | w2_29       | auto | 1       | 16, 4, 1         |
+|    w2_30_U                                                     | rom_1p       |           |      |      |        | w2_30       | auto | 1       | 16, 4, 1         |
+|    w2_31_U                                                     | rom_1p       |           |      |      |        | w2_31       | auto | 1       | 16, 4, 1         |
++----------------------------------------------------------------+--------------+-----------+------+------+--------+-------------+------+---------+------------------+
+
+
+================================================================
+== Pragma Report
+================================================================
+* Valid Pragma Syntax
++-----------+------------------------------------------+--------------------------------------------+
+| Type      | Options                                  | Location                                   |
++-----------+------------------------------------------+--------------------------------------------+
+| interface | m_axi port=input depth=1024 offset=slave | ../nn.cpp:16 in object_detect_nnbw, input  |
+| interface | m_axi port=output depth=4 offset=slave   | ../nn.cpp:18 in object_detect_nnbw, output |
+| interface | s_axilite port=length                    | ../nn.cpp:20 in object_detect_nnbw, length |
+| interface | s_axilite port=return                    | ../nn.cpp:22 in object_detect_nnbw, return |
++-----------+------------------------------------------+--------------------------------------------+
+
+

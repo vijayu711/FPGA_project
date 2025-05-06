@@ -1,0 +1,49 @@
+<profile>
+
+<section name = "Vitis HLS Report for 'object_detect_nnbw'" level="0">
+<item name = "Date">Thu May  1 18:22:48 2025
+</item>
+<item name = "Version">2024.2 (Build 5238294 on Nov  8 2024)</item>
+<item name = "Project">object_detect_nnbw</item>
+<item name = "Solution">hls (Vivado IP Flow Target)</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg400-1</item>
+</section>
+
+<section name = "Performance Estimates" level="0">
+<item name = "Timing">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="4">Clock, Target, Estimated, Uncertainty</keys>
+<column name="ap_clk">10.00 ns, 7.300 ns, 2.70 ns</column>
+</table>
+</item>
+</section>
+</item>
+<item name = "Latency">
+<section name = "" level="1">
+<item name = "Summary"><table name="" hasTotal="0">
+<keys size="8">, min, max, min, max, min, max, Type</keys>
+<column name="">32833, ?, 0.328 ms, ?, 32834, ?, no</column>
+</table>
+</item>
+<item name = "Detail">
+<section name = "" level="1">
+<item name = "Instance"><table name="" hasTotal="0">
+<keys size="9">Instance, Module, min, max, min, max, min, max, Type</keys>
+<column name="grp_object_detect_nnbw_Pipeline_1_fu_324">object_detect_nnbw_Pipeline_1, 3, ?, 30.000 ns, ?, 1, -9223372036854775808, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_object_detect_nnbw_Pipeline_VITIS_LOOP_38_1_VITIS_LOOP_42_2_fu_333">object_detect_nnbw_Pipeline_VITIS_LOOP_38_1_VITIS_LOOP_42_2, 32774, 32774, 0.328 ms, 0.328 ms, 32769, 32769, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_object_detect_nnbw_Pipeline_VITIS_LOOP_54_3_fu_374">object_detect_nnbw_Pipeline_VITIS_LOOP_54_3, 40, 40, 0.400 us, 0.400 us, 5, 5, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+<column name="grp_object_detect_nnbw_Pipeline_4_fu_478">object_detect_nnbw_Pipeline_4, 6, 6, 60.000 ns, 60.000 ns, 5, 5, loop auto-rewind stp (delay=0 clock cycles(s))</column>
+</table>
+</item>
+<item name = "Loop"><table name="" hasTotal="0">
+<keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
+</table>
+</item>
+</section>
+</item>
+</section>
+</item>
+</section>
+</profile>
